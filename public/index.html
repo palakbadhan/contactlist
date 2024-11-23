@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact List</title>
+</head>
+<body>
+  <h1>Contact List Management</h1>
+  <p>Open the browser's console to see the contact list operations.</p>
+
+  <script>
+    // Initialize the contact list
+    let contacts = [
+      { name: "John Doe", phone: "1234 567 890", email: "john.doe@example.com" },
+      { name: "Jane Smith", phone: "2345 678 901", email: "jane.smith@example.com" },
+      { name: "Bob Johnson", phone: "3456 789 012", email: "bob.johnson@example.com" },
+    ];
+
+    // Function to display the contact list
+    function displayContacts(contactList) {
+      console.log("Contact List:");
+      contactList.forEach((contact, index) => {
+        console.log(
+          `${index + 1}. ${contact.name} / ${contact.phone} / ${contact.email}`
+        );
+      });
+    }
+
+    // Function to add a new contact
+    function addContact(name, phone, email) {
+      contacts.push({ name, phone, email });
+      console.log(`\nNew contact "${name}" added successfully.`);
+    }
+
+    // Function to show the first and last contacts
+    function showFirstAndLastContacts() {
+      if (contacts.length === 0) {
+        console.log("The contact list is empty.");
+        return;
+      }
+      console.log("\nFirst Contact:");
+      console.log(
+        `${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+      );
+      console.log("\nLast Contact:");
+      console.log(
+        `${contacts[contacts.length - 1].name} / ${contacts[contacts.length - 1].phone} / ${contacts[contacts.length - 1].email}`
+      );
+    }
+
+    // Display the initial contact list
+    console.log("Initial Contacts:");
+    displayContacts(contacts);
+
+    // Add a new contact
+    addContact("Maisie Haley", "0913 531 3030", "risus.Quisque@urna.ca");
+
+    // Display the updated contact list
+    console.log("\nUpdated Contacts:");
+    displayContacts(contacts);
+
+    // Show the first and last contacts
+    showFirstAndLastContacts();
+  </script>
+</body>
+</html>
